@@ -1,6 +1,6 @@
 ---
 import ViewTransitions from "astro/components/ViewTransitions.astro";
-import { IconSun } from "@tabler/icons-react";
+import { IconServer, IconServer2, IconSun } from "@tabler/icons-react";
 import { IconMoon } from "@tabler/icons-react";
 
 const { title, desc } = Astro.props;
@@ -11,17 +11,13 @@ const themeCookie = Astro.cookies.get("theme")?.value ?? "light";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{title ?? "Achalogy"}</title>
-    <meta
-      name="description"
-      content={desc ??
-        ""}
-    />
+    <title>{title ?? "Gestion TI"}</title>
+    <meta name="description" content={desc ?? ""} />
     <link rel="icon" type="image/svg+xml" href="/favicon.ico?v=16" />
     <meta name="viewport" content="width=device-width" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="generator" content={Astro.generator} />
-    
+
     <!-- Añadir Hack Font -->
     <!-- <link
       rel="stylesheet"
@@ -31,6 +27,13 @@ const themeCookie = Astro.cookies.get("theme")?.value ?? "light";
       referrerpolicy="no-referrer"
     /> -->
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet"
+    />
+
     <meta name="theme-color" content="#ffffff" />
     <link rel="manifest" href="/site.webmanifest" />
   </head>
@@ -38,9 +41,9 @@ const themeCookie = Astro.cookies.get("theme")?.value ?? "light";
   <body>
     <main class={themeCookie}>
       <div
-        class={`flex flex-col min-h-screen bg-white dark:bg-slate-900 dark:text-white`}
+        class={`flex flex-col min-h-screen bg-[#FFF3FA] dark:bg-slate-900 dark:text-white`}
       >
-        <script is:inline>
+        <!-- <script is:inline>
           function changeTheme() {
             const value = `; ${document.cookie}`;
             const parts = value.split(`; theme=`);
@@ -49,17 +52,42 @@ const themeCookie = Astro.cookies.get("theme")?.value ?? "light";
             document.cookie = `theme=${nTheme}; expires=${new Date(Date.now() + 10e9).toUTCString()}; path=/`;
             window.location.reload();
           }
-        </script>
-        <div
+        </script> -->
+        <!-- <div
           class="select-none p-4 flex justify-between px-[5%] bg-gradient-to-r dark:from-slate-800 dark:to-slate-800 from-purple-500 to-indigo-600 text-white"
         >
-          <a class="font-semibold" href="/"
-            >Achalogy</a
-          >
+          <a class="font-semibold" href="/">Achalogy</a>
           <p onclick="changeTheme()" class="cursor-pointer">
             {themeCookie == "dark" ? <IconSun /> : <IconMoon />}
           </p>
-        </div>
+        </div> -->
+
+        <nav class="flex items-end justify-center h-[13vh] select-none">
+          <div
+            class="flex border h-[50%] border-black w-[15%] hover:bg-red-100 hover:bg-opacity-30 cursor-pointer"
+          >
+            <div
+              class="flex items-center justify-center border-r border-r-black h-full aspect-square"
+            >
+              <IconServer2 size={50} stroke={1} />
+            </div>
+            <p class="text-xl font-semibold p-4">Nombre Proyecto</p>
+          </div>
+          <div class="w-[78%] flex gap-16 items-center justify-end px-4">
+            <a
+              class="hover:bg-red-100 hover:bg-opacity-30 p-3 rounded cursor-pointer"
+              >Sobre Nosotros</a
+            >
+            <a
+              class="hover:bg-red-100 hover:bg-opacity-30 p-3 rounded cursor-pointer"
+              >Plan Proyecto</a
+            >
+            <a
+              class="hover:bg-red-100 hover:bg-opacity-30 p-3 rounded cursor-pointer"
+              >Contacto</a
+            >
+          </div>
+        </nav>
         <slot />
       </div>
 
@@ -73,7 +101,7 @@ const themeCookie = Astro.cookies.get("theme")?.value ?? "light";
         * {
           -ms-overflow-style: none; /* IE and Edge */
           scrollbar-width: none; /* Firefox */
-          /* font-family: "hack"; */
+          font-family: "Lora";
         }
 
         body {
@@ -120,4 +148,6 @@ const themeCookie = Astro.cookies.get("theme")?.value ?? "light";
       </style>
     </main>
   </body>
+
+
 </html>
