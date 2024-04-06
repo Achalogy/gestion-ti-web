@@ -1,17 +1,26 @@
 ---
 import Base from "../layouts/Base.astro";
+import Image from "@assets/datacenter.jpg";
 ---
 
 <Base>
   <div class="flex justify-end">
     <div
-      class="flex items-end justify-center w-[5vw] pb-16 h-screen top-0 fixed left-0"
+      class="flex items-end justify-center w-[8vw] pb-16 h-screen top-0 fixed left-0"
     >
       <p class="[writing-mode:vertical-lr] text-xl">test</p>
     </div>
 
-    <div class="h-[500vh] w-[95vw]">
-      <p>test</p>
+    <div class="w-[90vw] h-screen flex items-center justify-center">
+      <div class="w-full flex h-[60%] items-center">
+        <div class="flex-[4] flex gap-4 justify-center flex-col">
+          <p class="text-9xl flex-[4]">Servidores Colombia</p>
+          <p>test</p>
+        </div>
+        <div class="flex-[3] h-full">
+          <img src={Image.src} class="w-full h-full object-fill" />
+        </div>
+      </div>
     </div>
   </div>
 </Base>

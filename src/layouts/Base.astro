@@ -63,11 +63,11 @@ const themeCookie = Astro.cookies.get("theme")?.value ?? "light";
         </div> -->
 
         <nav
-          class="flex items-end justify-center h-[8rem] select-none fixed w-full"
+          class="flex items-center justify-center h-[7rem] select-none fixed w-full bg-[#FFF3FA] bg-opacity-80 backdrop-blur-md px-8"
         >
           <a
             href="/"
-            class="flex border h-[50%] border-black w-[18rem] hover:bg-red-100 hover:bg-opacity-30 cursor-pointer"
+            class="flex border h-[55%] border-black w-[18rem] hover:bg-[#C78CA0] hover:bg-opacity-30 cursor-pointer"
           >
             <div
               class="flex items-center justify-center border-r border-r-black h-full aspect-square"
@@ -76,7 +76,7 @@ const themeCookie = Astro.cookies.get("theme")?.value ?? "light";
             </div>
             <p class="text-xl font-semibold p-4">Nombre Proyecto</p>
           </a>
-          <div class="w-[70%] flex gap-16 items-center justify-end px-4">
+          <div class="w-[75%] flex gap-16 items-center justify-end px-4">
             <a
               class="hover:bg-red-100 hover:bg-opacity-30 p-3 rounded cursor-pointer"
               >Sobre Nosotros</a
@@ -92,9 +92,7 @@ const themeCookie = Astro.cookies.get("theme")?.value ?? "light";
             >
           </div>
         </nav>
-        <div class="mt-[10rem]">
-          <slot />
-        </div>
+        <slot />
       </div>
 
       <style is:global>
