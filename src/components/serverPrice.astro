@@ -1,0 +1,26 @@
+---
+const { bg, name, value, vCores, ram, storage, trafic, upgradeable } =
+  Astro.props;
+---
+
+<div class={`relative flex items-center justify-center flex-1 h-[25rem]`}>
+  <div class={`${bg} w-full h-full blur rounded-md`}></div>
+  <div
+    class={`flex flex-col gap-4 items-center justify-center absolute top-0 left-0 ${bg} w-[98%] h-[98%] rounded-md`}
+  >
+    <p class="text-2xl font-semibold">{name}</p>
+    <p></p>
+    <p class="text-4xl">${value}</p>
+
+    <button class="w-2/3 p-2 rounded-md bg-white bg-opacity-50"
+      >Contratar</button
+    >
+
+    <div class="text-center">
+      <p><b>{vCores}</b> vCore</p>
+      <p><b>{ram}</b> GB</p>
+      <p><b>{storage}</b> GB SSD SATA</p>
+      <p><b>{trafic}</b> Mbit/s tráfico ilimitado*</p>
+    </div>
+  </div>
+</div>

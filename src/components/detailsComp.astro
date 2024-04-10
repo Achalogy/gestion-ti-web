@@ -1,0 +1,13 @@
+---
+
+---
+
+<div class="flex-1 flex-col gap-3 hover:bg-pink-200 hover:bg-opacity-20 p-8">
+  <div class="[&>*]:text-pink-300 [&>*]:h-[5rem] [&>*]:w-[5rem]">
+    <slot name="icon" />
+  </div>
+  <b class="text-xl">
+    <slot name="title" />
+  </b>
+  <slot name="description" />
+</div>

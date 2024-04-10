@@ -18,5 +18,8 @@ export default defineConfig({
     rehypePlugins: [
       rehypeKatex
     ]
+  },
+  devToolbar: {
+    enabled: false
   }
 });

@@ -1,26 +1,184 @@
 ---
 import Base from "../layouts/Base.astro";
 import Image from "@assets/datacenter.jpg";
+import ServerPrice from "src/components/serverPrice.astro";
+import {
+  IconBox,
+  IconBrandGithub,
+  IconBulb,
+  IconCarouselVertical,
+  IconClock,
+  IconCpu,
+  IconDeviceFloppy,
+  IconMap,
+  IconMapPin,
+  IconSettings,
+} from "@tabler/icons-react";
+import DetailsComp from "src/components/detailsComp.astro";
 ---
 
 <Base>
-  <div class="flex justify-end">
+  <div class="flex flex-col items-end justify-center">
     <div
-      class="flex items-end justify-center w-[8vw] pb-16 h-screen top-0 fixed left-0"
+      class="flex flex-col gap-8 justify-end items-center w-[8vw] pb-16 h-screen top-0 fixed left-0 z-50"
     >
-      <p class="[writing-mode:vertical-lr] text-xl">test</p>
+      <p class="[writing-mode:vertical-lr] text-xl">
+        Estamos ubicados en Colombia
+      </p>
+      <a
+        href="https://github.com/achalogy"
+        target="_blank"
+        class="cursor-pointer"
+      >
+        <IconBrandGithub />
+      </a>
     </div>
 
-    <div class="w-[90vw] h-screen flex items-center justify-center">
-      <div class="w-full flex h-[60%] items-center">
-        <div class="flex-[4] flex gap-4 justify-center flex-col">
+    <div
+      class="w-full pl-[10vw] h-screen flex items-center justify-center"
+      style={{
+        backgroundImage: "url(/bg.svg)",
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      <div class="w-full flex h-[60%] gap-12 items-center">
+        <div class="flex-[3] flex gap-4 justify-center flex-col">
           <p class="text-9xl flex-[4]">Servidores Colombia</p>
-          <p>test</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum delectus sunt laboriosam non corporis debitis impedit saepe harum soluta quis libero fuga enim perferendis nostrum inventore, fugiat a consequatur consectetur! Possimus tenetur veniam sit? Perferendis quaerat cupiditate adipisci est, quae aut, quis voluptatibus ullam labore debitis, natus doloribus neque! Velit.</p>
         </div>
         <div class="flex-[3] h-full">
           <img src={Image.src} class="w-full h-full object-fill" />
         </div>
       </div>
     </div>
+
+    <div
+      class="absolute h-[10vh] bg-opacity-35 backdrop-blur-md w-full top-[95vh]"
+    >
+    </div>
+
+    <div
+      class="p-[7vw] flex items-center gap-4 flex-wrap bg-[#FFF3FA] mx-auto w-full"
+    >
+      <ServerPrice
+        bg="bg-pink-200"
+        name="Starter"
+        value="20.000"
+        vCores="1"
+        ram="2"
+        storage="20"
+        trafic="100"
+      />
+      <ServerPrice
+        bg="bg-indigo-100"
+        name="Value"
+        value="28.000"
+        vCores="1"
+        ram="2"
+        storage="40"
+        trafic="250"
+      />
+      <ServerPrice
+        bg="bg-pink-200"
+        name="Essential"
+        value="65.000"
+        vCores="2"
+        ram="4"
+        storage="80"
+        trafic="500"
+      />
+      <ServerPrice
+        bg="bg-indigo-100"
+        name="Comfort"
+        value="108.000"
+        vCores="4"
+        ram="8"
+        storage="160"
+        trafic="1"
+      />
+      <ServerPrice
+        bg="bg-pink-200"
+        name="Elite"
+        value="150.000"
+        vCores="8"
+        ram="Desde 8"
+        storage="Desde 160"
+        trafic="2"
+        upgradeable={true}
+      />
+    </div>
+
+    <div
+      class="flex gap-12 w-[70%] px-[5rem] items-center self-center min-h-[30vh] bg-white rounded-md"
+    >
+      <IconBox className="text-pink-200 h-[100%] w-[40%] aspect-square" />
+      <p class="text-xl">
+        Nuestros VPS están especialmente diseñados para adaptarse a sus
+        necesidades y crecer con su negocio. No será necesario aprovisionar
+        recursos, sino que podrá añadirlos fácilmente, siempre que lo necesite,
+        directamente desde su tablero. De este modo, podrá controlar el gasto y
+        pagar solo por lo que consume.
+      </p>
+    </div>
+  </div>
+  <div class="grid grid-cols-3 gap-2 w-[70%] self-center select-none py-8">
+    <DetailsComp>
+      <IconCpu slot="icon" />
+      <p slot="title">Altas prestaciones</p>
+      <p slot="description">
+        Nuestros VPS, basados en arquitecturas de última generación,
+        almacenamiento SSD NVMe y una infraestructura resiliente, se adaptan a
+        todas las necesidades.
+      </p>
+    </DetailsComp>
+    <DetailsComp>
+      <IconDeviceFloppy slot="icon" />
+      <p slot="title">Backups</p>
+      <p slot="description">
+        Proteja sus datos con las opciones de backup para VPS. La opción de
+        backup automático permite guardar copias de seguridad de sus datos de
+        forma automática y regular.
+      </p>
+    </DetailsComp>
+    <DetailsComp>
+      <IconClock slot="icon" />
+      <p slot="title">Disponibilidad</p>
+      <p slot="description">
+        Los VPS son la opción ideal, ya que nuestra infraestructura ofrece una
+        baja latencia y una disponibilidad del hardware garantizada para que
+        disfrute de un servicio estable en todo momento.
+      </p>
+    </DetailsComp>
+    <DetailsComp>
+      <IconMapPin slot="icon" />
+      <p slot="title">Ubicación</p>
+      <p slot="description">
+        Tus usuarios disfrutarán de una experiencia óptima gracias a la
+        ubicación estratégica de nuestros servidores en Colombia. La latencia se
+        reduce considerablemente, lo que significa que tu sitio web o aplicación
+        se cargará más rápido para ellos.
+      </p>
+    </DetailsComp>
+    <DetailsComp>
+      <IconSettings slot="icon" />
+      <p slot="title">Soporte</p>
+      <p slot="description">
+        El soporte de ______ engloba un conjunto de soluciones de asistencia,
+        experiencia y servicios en línea. ¡Simplifique su día a día con una
+        solución adaptada a su organización y disfrute de una mejor experiencia
+        en el uso de nuestros servicios
+      </p>
+    </DetailsComp>
+    <DetailsComp>
+      <IconBulb slot="icon" />
+      <p slot="title">Sencillez</p>
+      <p slot="description">
+        Con los VPS de OVHcloud disfrutará de un control total sobre su servidor
+        virtual, pero sin tener que preocuparse por la gestión del hardware.
+        Podrá elegir entre una amplia variedad de distribuciones Linux y Windows
+        preinstalables, así como de paneles de control web.
+      </p>
+    </DetailsComp>
   </div>
 </Base>
