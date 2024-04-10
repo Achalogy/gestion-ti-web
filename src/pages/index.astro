@@ -20,9 +20,9 @@ import DetailsComp from "src/components/detailsComp.astro";
 <Base>
   <div class="flex flex-col items-end justify-center">
     <div
-      class="flex flex-col gap-8 justify-end items-center w-[8vw] pb-16 h-screen top-0 fixed left-0 z-50"
+      class="flex flex-col gap-4 xl:gap-8 justify-end items-center w-[8vw] pb-16 h-screen top-0 fixed left-0 z-50"
     >
-      <p class="[writing-mode:vertical-lr] text-xl">
+      <p class="[writing-mode:vertical-lr] text-xs xl:text-xl">
         Estamos ubicados en Colombia
       </p>
       <a
@@ -30,22 +30,31 @@ import DetailsComp from "src/components/detailsComp.astro";
         target="_blank"
         class="cursor-pointer"
       >
-        <IconBrandGithub />
+        <IconBrandGithub className="w-[1rem] xl:w-[2rem]" />
       </a>
     </div>
 
     <div
-      class="w-full pl-[10vw] h-screen flex items-center justify-center"
+      class="w-full p-10 xl:p-0 xl:pl-[10vw] h-screen flex items-center justify-center"
       style={{
         backgroundImage: "url(/bg.svg)",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div class="w-full flex h-[60%] gap-12 items-center">
+      <div
+        class="w-full flex flex-col xl:flex-row xl:h-[60%] gap-12 items-center"
+      >
         <div class="flex-[3] flex gap-4 justify-center flex-col">
-          <p class="text-9xl flex-[4]">Servidores Colombia</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum delectus sunt laboriosam non corporis debitis impedit saepe harum soluta quis libero fuga enim perferendis nostrum inventore, fugiat a consequatur consectetur! Possimus tenetur veniam sit? Perferendis quaerat cupiditate adipisci est, quae aut, quis voluptatibus ullam labore debitis, natus doloribus neque! Velit.</p>
+          <p class="text-6xl xl:text-9xl flex-[4]">Servidores Colombia</p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum
+            delectus sunt laboriosam non corporis debitis impedit saepe harum
+            soluta quis libero fuga enim perferendis nostrum inventore, fugiat a
+            consequatur consectetur! Possimus tenetur veniam sit? Perferendis
+            quaerat cupiditate adipisci est, quae aut, quis voluptatibus ullam
+            labore debitis, natus doloribus neque! Velit.
+          </p>
         </div>
         <div class="flex-[3] h-full">
           <img src={Image.src} class="w-full h-full object-fill" />
@@ -59,7 +68,7 @@ import DetailsComp from "src/components/detailsComp.astro";
     </div>
 
     <div
-      class="p-[7vw] flex items-center gap-4 flex-wrap bg-[#FFF3FA] mx-auto w-full"
+      class="p-[3rem] xl:p-[8rem] grid grid-cols-1 xl:grid-cols-5 gap-6 items-center bg-[#FFF3FA] mx-auto w-full self-center"
     >
       <ServerPrice
         bg="bg-pink-200"
@@ -110,10 +119,12 @@ import DetailsComp from "src/components/detailsComp.astro";
     </div>
 
     <div
-      class="flex gap-12 w-[70%] px-[5rem] items-center self-center min-h-[30vh] bg-white rounded-md"
+      class="flex flex-col xl:flex-row gap-6 xl:gap-12 w-[70%] p-6 xl:px-[5rem] items-center self-center min-h-[30vh] bg-white rounded-md"
     >
-      <IconBox className="text-pink-200 h-[100%] w-[40%] aspect-square" />
-      <p class="text-xl">
+      <IconBox
+        className="text-pink-200 h-[100%] w-[60%] xl:w-[40%] aspect-square"
+      />
+      <p class="text-md xl:text-xl">
         Nuestros VPS están especialmente diseñados para adaptarse a sus
         necesidades y crecer con su negocio. No será necesario aprovisionar
         recursos, sino que podrá añadirlos fácilmente, siempre que lo necesite,
@@ -122,7 +133,9 @@ import DetailsComp from "src/components/detailsComp.astro";
       </p>
     </div>
   </div>
-  <div class="grid grid-cols-3 gap-2 w-[70%] self-center select-none py-8">
+  <div
+    class="grid grid-cols-1 xl:grid-cols-3 gap-2 p-[1rem] xl:w-[70%] self-center select-none py-8"
+  >
     <DetailsComp>
       <IconCpu slot="icon" />
       <p slot="title">Altas prestaciones</p>
